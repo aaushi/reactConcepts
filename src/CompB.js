@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CompC from './CompC'
+import { FirstName,LastName } from './App'
 
-const compB = () => {
+  
+
+const CompB = () => {
+  const fname=useContext(FirstName);
+  const lname=useContext(LastName);
   return (
-   <CompC/>  )
+    <div>this is from compB {fname}{lname}</div>
+     )
 }
 
-export default compB
+export default CompB
