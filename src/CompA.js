@@ -1,10 +1,10 @@
 import React from 'react'
 import CompB from './CompB'
 
-const CompA = () => {
+const compA = () => {
   return (
    <CompB/>
   )
 }
 
-export default CompA
+export default compA
