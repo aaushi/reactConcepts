@@ -1,22 +1,33 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { createContext } from "react";
-import CompA from "./CompA";
-const FirstName = createContext();
-const LastName = createContext();
+
+
+
+import {Link} from "react-router-dom"
+
+
 
 function App() {
- 
   return (
-    <div>
-      <FirstName.Provider value={"Aaushi"}>
-        <LastName.Provider value={"Gupta"}>
-          <CompA />
-        </LastName.Provider>
-      </FirstName.Provider>
-    </div>
+    <>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="ExampleUseContext">ExampleUseContext</Link>
+      </li>
+      <li>
+        <Link to="ExampleUseCallback">ExampleUseCallback</Link>
+      </li>
+      <li>
+        <Link to="ExampleUseMemo">ExampleUseMemo</Link>
+      </li>
+    </>
   );
 }
 
+
+
+
 export default App;
-export { FirstName, LastName };
+

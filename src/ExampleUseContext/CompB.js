@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import CompC from './CompC'
-import { FirstName,LastName } from './App'
+import { FirstName,LastName } from './ExampleUseContextParent'
 
   
 

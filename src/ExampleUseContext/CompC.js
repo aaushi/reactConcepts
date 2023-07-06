@@ -1,5 +1,5 @@
 import React from "react";
-import { FirstName, LastName } from "./App";
+import { FirstName, LastName } from "./ExampleUseContextParent";
 
 const compC = () => {
   return (

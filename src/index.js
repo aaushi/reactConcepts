@@ -3,11 +3,34 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ExampleUseCallbackMain from './ExampleUseCallback/ExampleUseCallbackMain';
+import ExampleUseMemo from './ExampleUseMemo';
 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ExampleUseContextParent from './ExampleUseContext/ExampleUseContextParent';
+
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "ExampleUseContext",
+    element: <ExampleUseContextParent />,
+  },
+  {
+    path: "ExampleUseCallback",
+    element: <ExampleUseCallbackMain />,
+  },
+  {
+    path: "ExampleUseMemo",
+    element: <ExampleUseMemo />,
+  },
+]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={appRouter} />
   </React.StrictMode>
 );
 
