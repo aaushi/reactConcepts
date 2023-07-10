@@ -22,6 +22,9 @@ function App() {
       <li>
         <Link to="ExampleUseMemo">ExampleUseMemo</Link>
       </li>
+      <li>
+        <Link to="UserDirectory">User Directory</Link>
+      </li>
     </>
   );
 }

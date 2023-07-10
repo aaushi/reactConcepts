@@ -1,13 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import ExampleUseCallbackMain from './ExampleUseCallback/ExampleUseCallbackMain';
-import ExampleUseMemo from './ExampleUseMemo';
+import React, { lazy, Suspense } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import ExampleUseCallbackMain from "./ExampleUseCallback/ExampleUseCallbackMain";
+//import ExampleUseMemo from './ExampleUseMemo';
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ExampleUseContextParent from './ExampleUseContext/ExampleUseContextParent';
+import Directory from "./userDirectory/Directory";
+//import ExampleUseContextParent from './ExampleUseContext/ExampleUseContextParent';
+const ExampleUseContext = lazy(() => {
+  import("./ExampleUseContext/ExampleUseContextParent");
+});
+const ExampleUseMemo = lazy(() => {
+  import("./ExampleUseMemo");
+});
 
 const appRouter = createBrowserRouter([
   {
@@ -16,7 +23,11 @@ const appRouter = createBrowserRouter([
   },
   {
     path: "ExampleUseContext",
-    element: <ExampleUseContextParent />,
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <ExampleUseContext />
+      </Suspense>
+    ),
   },
   {
     path: "ExampleUseCallback",
@@ -24,10 +35,22 @@ const appRouter = createBrowserRouter([
   },
   {
     path: "ExampleUseMemo",
-    element: <ExampleUseMemo />,
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <ExampleUseMemo />
+      </Suspense>
+    ),
+  },
+  {
+    path: "userDirectory",
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <Directory />
+      </Suspense>
+    ),
   },
 ]);
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <RouterProvider router={appRouter} />
