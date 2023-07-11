@@ -9,7 +9,7 @@ import {Link} from "react-router-dom"
 
 function App() {
   return (
-    <>
+    <ol>
       <li>
         <Link to="/">Home</Link>
       </li>
@@ -25,7 +25,18 @@ function App() {
       <li>
         <Link to="UserDirectory">User Directory</Link>
       </li>
-    </>
+      <li>
+        <Link to="ExampleUseRef">Example UseRef</Link>
+        <ul>
+          <li>
+            <Link to="PurposeMutantVariable">Purpose MutantVariable</Link>
+          </li>
+          <li>
+            <Link to="PurposeAccessDom">Purpose AccessDom</Link>
+          </li>
+        </ul>
+      </li>
+    </ol>
   );
 }
 

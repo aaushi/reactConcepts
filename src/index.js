@@ -8,6 +8,9 @@ import ExampleUseCallbackMain from "./ExampleUseCallback/ExampleUseCallbackMain"
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Directory from "./userDirectory/Directory";
+import UseRefHomePage from "./ExampleUseRef/UseRefHomePage";
+import PurposeMutantVariable from "./ExampleUseRef/PurposeMutantVariable";
+import PurposeAccessDom from "./ExampleUseRef/PurposeAccessDom";
 //import ExampleUseContextParent from './ExampleUseContext/ExampleUseContextParent';
 const ExampleUseContext = lazy(() => {
   import("./ExampleUseContext/ExampleUseContextParent");
@@ -48,6 +51,24 @@ const appRouter = createBrowserRouter([
         <Directory />
       </Suspense>
     ),
+  },
+  {
+    path: "ExampleUseRef",
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <UseRefHomePage />
+      </Suspense>
+    ),
+    children: [
+      {
+        path: "PurposeMutantVariable",
+        element: <PurposeMutantVariable />,
+      },
+      {
+        path: "PurposeAccessDom",
+        element: <PurposeAccessDom />,
+      },
+    ],
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
