@@ -11,6 +11,7 @@ import Directory from "./userDirectory/Directory";
 import UseRefHomePage from "./ExampleUseRef/UseRefHomePage";
 import PurposeMutantVariable from "./ExampleUseRef/PurposeMutantVariable";
 import PurposeAccessDom from "./ExampleUseRef/PurposeAccessDom";
+import ErrorBoundary from "./ErrorBoundary";
 //import ExampleUseContextParent from './ExampleUseContext/ExampleUseContextParent';
 const ExampleUseContext = lazy(() => {
   import("./ExampleUseContext/ExampleUseContextParent");
@@ -55,18 +56,28 @@ const appRouter = createBrowserRouter([
   {
     path: "ExampleUseRef",
     element: (
-      <Suspense fallback={<h2>...Loading</h2>}>
-        <UseRefHomePage />
-      </Suspense>
+      <ErrorBoundary fallback="Error">
+        <Suspense fallback={<h2>...Loading</h2>}>
+          <UseRefHomePage />
+        </Suspense>
+      </ErrorBoundary>
     ),
     children: [
       {
         path: "PurposeMutantVariable",
-        element: <PurposeMutantVariable />,
+        element: (
+          <ErrorBoundary fallback="Error">
+            <PurposeMutantVariable />
+          </ErrorBoundary>
+        ),
       },
       {
         path: "PurposeAccessDom",
-        element: <PurposeAccessDom />,
+        element: (
+          <ErrorBoundary fallback="Error">
+            <PurposeAccessDom />
+          </ErrorBoundary>
+        ),
       },
     ],
   },
