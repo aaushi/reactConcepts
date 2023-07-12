@@ -3,6 +3,7 @@ import React from "react";
 class ErrorBoundary extends React.Component{
     state={hasError:false}
     constructor(){
+        super();
         console.log("in errorboundary")
     }
     static getDerivedStateFromError(error){

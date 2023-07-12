@@ -54,7 +54,7 @@ const appRouter = createBrowserRouter([
     ),
   },
   {
-    path: "ExampleUseRef",
+    path: "/ExampleUseRef",
     element: (
       <ErrorBoundary fallback="Error">
         <Suspense fallback={<h2>...Loading</h2>}>
@@ -65,17 +65,15 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "PurposeMutantVariable",
-        element: (
-          <ErrorBoundary fallback="Error">
-            <PurposeMutantVariable />
-          </ErrorBoundary>
-        ),
+        element: (<PurposeMutantVariable />)
       },
       {
         path: "PurposeAccessDom",
         element: (
           <ErrorBoundary fallback="Error">
-            <PurposeAccessDom />
+            <Suspense fallback={<h2>...Loading</h2>}>
+              <PurposeAccessDom />
+            </Suspense>
           </ErrorBoundary>
         ),
       },

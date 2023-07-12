@@ -27,14 +27,7 @@ function App() {
       </li>
       <li>
         <Link to="ExampleUseRef">Example UseRef</Link>
-        <ul>
-          <li>
-            <Link to="PurposeMutantVariable">Purpose MutantVariable</Link>
-          </li>
-          <li>
-            <Link to="PurposeAccessDom">Purpose AccessDom</Link>
-          </li>
-        </ul>
+        
       </li>
     </ol>
   );
