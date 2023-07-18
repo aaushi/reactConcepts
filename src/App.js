@@ -27,7 +27,9 @@ function App() {
       </li>
       <li>
         <Link to="ExampleUseRef">Example UseRef</Link>
-        
+      </li>
+      <li>
+        <Link to="ExampleUseEffect">Example useEffect</Link>
       </li>
     </ol>
   );

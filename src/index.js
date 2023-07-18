@@ -12,6 +12,7 @@ import UseRefHomePage from "./ExampleUseRef/UseRefHomePage";
 import PurposeMutantVariable from "./ExampleUseRef/PurposeMutantVariable";
 import PurposeAccessDom from "./ExampleUseRef/PurposeAccessDom";
 import ErrorBoundary from "./ErrorBoundary";
+import ExampleUseEffectMain from "./ExampleUseEffect/ExampleUseEffectMain";
 //import ExampleUseContextParent from './ExampleUseContext/ExampleUseContextParent';
 const ExampleUseContext = lazy(() => {
   import("./ExampleUseContext/ExampleUseContextParent");
@@ -65,7 +66,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "PurposeMutantVariable",
-        element: (<PurposeMutantVariable />)
+        element: <PurposeMutantVariable />,
       },
       {
         path: "PurposeAccessDom",
@@ -78,6 +79,14 @@ const appRouter = createBrowserRouter([
         ),
       },
     ],
+  },
+  {
+    path: "ExampleUseEffect",
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <ExampleUseEffectMain />
+      </Suspense>
+    ),
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
