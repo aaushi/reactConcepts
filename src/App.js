@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 
@@ -8,30 +9,37 @@ import {Link} from "react-router-dom"
 
 
 function App() {
+   const { loginWithRedirect } = useAuth0();
   return (
-    <ol>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="ExampleUseContext">ExampleUseContext</Link>
-      </li>
-      <li>
-        <Link to="ExampleUseCallback">ExampleUseCallback</Link>
-      </li>
-      <li>
-        <Link to="ExampleUseMemo">ExampleUseMemo</Link>
-      </li>
-      <li>
-        <Link to="UserDirectory">User Directory</Link>
-      </li>
-      <li>
-        <Link to="ExampleUseRef">Example UseRef</Link>
-      </li>
-      <li>
-        <Link to="ExampleUseEffect">Example useEffect</Link>
-      </li>
-    </ol>
+    <>
+      <button onClick={() => loginWithRedirect()}>Log In</button>
+      <ol>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="ExampleUseContext">ExampleUseContext</Link>
+        </li>
+        <li>
+          <Link to="ExampleUseCallback">ExampleUseCallback</Link>
+        </li>
+        <li>
+          <Link to="ExampleUseMemo">ExampleUseMemo</Link>
+        </li>
+        <li>
+          <Link to="UserDirectory">User Directory</Link>
+        </li>
+        <li>
+          <Link to="ExampleUseRef">Example UseRef</Link>
+        </li>
+        <li>
+          <Link to="ExampleUseEffect">Example useEffect</Link>
+        </li>
+        <li>
+          <Link to="LiftingStateUp">Example Lifting StateUp</Link>
+        </li>
+      </ol>
+    </>
   );
 }
 

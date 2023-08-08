@@ -13,13 +13,20 @@ import PurposeMutantVariable from "./ExampleUseRef/PurposeMutantVariable";
 import PurposeAccessDom from "./ExampleUseRef/PurposeAccessDom";
 import ErrorBoundary from "./ErrorBoundary";
 import ExampleUseEffectMain from "./ExampleUseEffect/ExampleUseEffectMain";
+import { Auth0Provider } from "@auth0/auth0-react";
+//import ParentA from "./LiftingStateUp/ParentA";
 //import ExampleUseContextParent from './ExampleUseContext/ExampleUseContextParent';
 const ExampleUseContext = lazy(() => {
-  import("./ExampleUseContext/ExampleUseContextParent");
+  return import("./ExampleUseContext/ExampleUseContextParent");
 });
 const ExampleUseMemo = lazy(() => {
-  import("./ExampleUseMemo");
+  return import("./ExampleUseMemo");
 });
+
+const ParentA = lazy(() => {
+  return import("./LiftingStateUp/ParentA");
+});
+
 
 const appRouter = createBrowserRouter([
   {
@@ -88,12 +95,26 @@ const appRouter = createBrowserRouter([
       </Suspense>
     ),
   },
+  {
+    path: "LiftingStateUp",
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <ParentA />
+      </Suspense>
+    ),
+  },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <Auth0Provider
+    domain="dev-bneylzxsxy0iq0mw.us.auth0.com"
+    clientId="YPaDAj63ijYybFUzPekAIPgVQwK6MsA6"
+    authorizationParams={{
+      redirect_uri: window.location.origin,
+    }}
+  >
     <RouterProvider router={appRouter} />
-  </React.StrictMode>
+  </Auth0Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

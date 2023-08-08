@@ -5,8 +5,8 @@ const ExampleUseEffectMain = () => {
   console.log("outside useeffect");
   useEffect(() => {
     console.log("in useeffect");
-  }, [count]); //[] only once after render
-  //[count] runs after every render.
+  }, [count]); //[] only once after render//componentdidmount()
+  //[count] runs after every render.//componentdidupdate()
   //
   const handleClick = () => {
     setCount(count + 1);

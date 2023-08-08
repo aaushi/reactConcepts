@@ -8,7 +8,7 @@ const PurposeAccessDom = () => {
     }
   return (
     <>
-      <div>use to access DOM directly</div>
+      <div>use to access DOM directly/example for uncontrolled component</div>
       <input  ref={inputRef}/>
       <button onClick={()=>handleSubmit()}>Submit</button>
     </>
