@@ -9,7 +9,7 @@ const ParentA = () => {
 
   return (
     <div>
-      <ChildOfA message={message} getData={getData}></ChildOfA>
+      <ChildOfA messageToChild={message} getDataFromChild={getData}></ChildOfA>
       <p>message from child:{message}</p>
     </div>
   );

@@ -38,6 +38,9 @@ function App() {
         <li>
           <Link to="LiftingStateUp">Example Lifting StateUp</Link>
         </li>
+        <li>
+          <Link to="ExampleUseCallback2">Example Usecallback2</Link>
+        </li>
       </ol>
     </>
   );

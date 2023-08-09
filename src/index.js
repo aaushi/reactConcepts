@@ -27,6 +27,10 @@ const ParentA = lazy(() => {
   return import("./LiftingStateUp/ParentA");
 });
 
+const UseCallBackExample2 = lazy(() => {
+  return import("./ExampleUseCallback2/Parent");
+});
+
 
 const appRouter = createBrowserRouter([
   {
@@ -41,10 +45,10 @@ const appRouter = createBrowserRouter([
       </Suspense>
     ),
   },
-  {
+  /* {
     path: "ExampleUseCallback",
     element: <ExampleUseCallbackMain />,
-  },
+  }, */
   {
     path: "ExampleUseMemo",
     element: (
@@ -100,6 +104,14 @@ const appRouter = createBrowserRouter([
     element: (
       <Suspense fallback={<h2>...Loading</h2>}>
         <ParentA />
+      </Suspense>
+    ),
+  },
+  {
+    path: "ExampleUseCallback2",
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <UseCallBackExample2 />
       </Suspense>
     ),
   },
