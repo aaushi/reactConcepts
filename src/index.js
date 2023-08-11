@@ -33,6 +33,9 @@ const UseCallBackExample2 = lazy(() => {
 const HigherOrderComponent = lazy(() => {
   return import("./HigherOrderExample/App");
 });
+const CustomHookExample = lazy(() => {
+  return import("./CustomHook/CustomHookExample");
+});
 
 
 const appRouter = createBrowserRouter([
@@ -123,6 +126,14 @@ const appRouter = createBrowserRouter([
     element: (
       <Suspense fallback={<h2>...Loading</h2>}>
         <HigherOrderComponent />
+      </Suspense>
+    ),
+  },
+  {
+    path: "CustomHookExample",
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <CustomHookExample />
       </Suspense>
     ),
   },

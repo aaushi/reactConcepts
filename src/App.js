@@ -44,6 +44,9 @@ function App() {
         <li>
           <Link to="HigherOrderComponent">Example HigherOrderComponent</Link>
         </li>
+        <li>
+          <Link to="CustomHookExample">Example Custom Hook</Link>
+        </li>
       </ol>
     </>
   );

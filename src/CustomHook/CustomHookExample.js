@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
-import useLogin from './UseLogin';
+import React, { useState } from "react";
+import useCounter from "./Counter";
+
 
 const CustomHookExample = () => {
-    const [user,setUser]=useState();
-    useLogin(()=>{console.log('hi')},[user])
+  const [count,handleIncrement,handleDecrement]=useCounter(10);
   return (
-    <div>CustomHookExample</div>
-  )
-}
+    <div>
+      <h1>{count}</h1>
+      <button onClick={handleIncrement}>Increment</button>
+      <button onClick={handleDecrement}>Decrement</button>
+    </div>
+  );
+};
 
-export default CustomHookExample
+export default CustomHookExample;
