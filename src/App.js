@@ -41,6 +41,9 @@ function App() {
         <li>
           <Link to="ExampleUseCallback2">Example Usecallback2</Link>
         </li>
+        <li>
+          <Link to="HigherOrderComponent">Example HigherOrderComponent</Link>
+        </li>
       </ol>
     </>
   );

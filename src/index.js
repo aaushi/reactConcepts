@@ -30,6 +30,9 @@ const ParentA = lazy(() => {
 const UseCallBackExample2 = lazy(() => {
   return import("./ExampleUseCallback2/Parent");
 });
+const HigherOrderComponent = lazy(() => {
+  return import("./HigherOrderExample/App");
+});
 
 
 const appRouter = createBrowserRouter([
@@ -112,6 +115,14 @@ const appRouter = createBrowserRouter([
     element: (
       <Suspense fallback={<h2>...Loading</h2>}>
         <UseCallBackExample2 />
+      </Suspense>
+    ),
+  },
+  {
+    path: "HigherOrderComponent",
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <HigherOrderComponent />
       </Suspense>
     ),
   },
