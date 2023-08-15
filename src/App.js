@@ -47,6 +47,9 @@ function App() {
         <li>
           <Link to="CustomHookExample">Example Custom Hook</Link>
         </li>
+        <li>
+          <Link to="Debouncing">Example Debouncing</Link>
+        </li>
       </ol>
     </>
   );

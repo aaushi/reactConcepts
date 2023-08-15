@@ -36,6 +36,9 @@ const HigherOrderComponent = lazy(() => {
 const CustomHookExample = lazy(() => {
   return import("./CustomHook/CustomHookExample");
 });
+const Debouncing = lazy(() => {
+  return import("./Debouncing/Debouncing");
+});
 
 
 const appRouter = createBrowserRouter([
@@ -134,6 +137,14 @@ const appRouter = createBrowserRouter([
     element: (
       <Suspense fallback={<h2>...Loading</h2>}>
         <CustomHookExample />
+      </Suspense>
+    ),
+  },
+  {
+    path: "Debouncing",
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <Debouncing />
       </Suspense>
     ),
   },
