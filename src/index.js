@@ -39,6 +39,9 @@ const CustomHookExample = lazy(() => {
 const Debouncing = lazy(() => {
   return import("./Debouncing/Debouncing");
 });
+const SearchRestaurantAndMenu = lazy(() => {
+  return import("./SearchRestaurantAndMenu/SearchResutaurantAndMenu");
+});
 
 
 const appRouter = createBrowserRouter([
@@ -145,6 +148,14 @@ const appRouter = createBrowserRouter([
     element: (
       <Suspense fallback={<h2>...Loading</h2>}>
         <Debouncing />
+      </Suspense>
+    ),
+  },
+  {
+    path: "SearchRestaurantAndMenu",
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <SearchRestaurantAndMenu />
       </Suspense>
     ),
   },

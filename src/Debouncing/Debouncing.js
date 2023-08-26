@@ -20,7 +20,7 @@ export default function Debouncing() {
         getData();
       }
     }, DEBOUNCE_DELAY);
-    return () => clearTimeout(debounceTimer);
+    return () => clearTimeout(debounceTimer);//clears the timer when any key press is done before  500 ms.
   }, [query]);
 
   async function getData() {
@@ -43,7 +43,9 @@ export default function Debouncing() {
       </div>
       <div className="list is-hoverable">
         {searchResults.length > 0 &&
-          searchResults.map((res,index) => <div key={res.name+index}>{res.name}</div>)}
+          searchResults
+            .filter(item=>item.name.startsWith(query))
+            .map((res, index) => <div key={res.name + index}>{res.name}</div>)}
       </div>
     </div>
   );

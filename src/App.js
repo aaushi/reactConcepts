@@ -50,6 +50,9 @@ function App() {
         <li>
           <Link to="Debouncing">Example Debouncing</Link>
         </li>
+        <li>
+          <Link to="SearchRestaurantAndMenu">Search Restaurant And Menu</Link>
+        </li>
       </ol>
     </>
   );
