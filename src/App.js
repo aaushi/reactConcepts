@@ -54,7 +54,14 @@ function App() {
           <Link to="SearchRestaurantAndMenu">Search Restaurant And Menu</Link>
         </li>
         <li>
-          <Link to="CustomHookExample2">Using CustomHook check user status</Link>
+          <Link to="CustomHookExample2">
+            Using CustomHook check user status
+          </Link>
+        </li>
+        <li>
+          <Link to="RenderingPropsExample">
+            Rendering Props Example
+          </Link>
         </li>
       </ol>
     </>

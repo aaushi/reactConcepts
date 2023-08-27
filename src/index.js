@@ -44,6 +44,9 @@ const SearchRestaurantAndMenu = lazy(() => {
 const CustomHookExample2 = lazy(() => {
   return import("./CustomHook2/CustomHookExample2");
 });
+const RenderingPropsExample = lazy(() => {
+  return import("./RenderingProps/PropsParent");
+});
 
 
 const appRouter = createBrowserRouter([
@@ -166,6 +169,14 @@ const appRouter = createBrowserRouter([
     element: (
       <Suspense fallback={<h2>...Loading</h2>}>
         <CustomHookExample2 />
+      </Suspense>
+    ),
+  },
+  {
+    path: "RenderingPropsExample",
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <RenderingPropsExample />
       </Suspense>
     ),
   },
