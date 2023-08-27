@@ -53,6 +53,9 @@ function App() {
         <li>
           <Link to="SearchRestaurantAndMenu">Search Restaurant And Menu</Link>
         </li>
+        <li>
+          <Link to="CustomHookExample2">Using CustomHook check user status</Link>
+        </li>
       </ol>
     </>
   );

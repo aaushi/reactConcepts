@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import ExampleUseCallbackMain from "./ExampleUseCallback/ExampleUseCallbackMain";
 //import ExampleUseMemo from './ExampleUseMemo';
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -41,6 +40,9 @@ const Debouncing = lazy(() => {
 });
 const SearchRestaurantAndMenu = lazy(() => {
   return import("./SearchRestaurantAndMenu/SearchResutaurantAndMenu");
+});
+const CustomHookExample2 = lazy(() => {
+  return import("./CustomHook2/CustomHookExample2");
 });
 
 
@@ -156,6 +158,14 @@ const appRouter = createBrowserRouter([
     element: (
       <Suspense fallback={<h2>...Loading</h2>}>
         <SearchRestaurantAndMenu />
+      </Suspense>
+    ),
+  },
+  {
+    path: "CustomHookExample2",
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <CustomHookExample2 />
       </Suspense>
     ),
   },
