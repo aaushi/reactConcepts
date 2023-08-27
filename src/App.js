@@ -59,9 +59,10 @@ function App() {
           </Link>
         </li>
         <li>
-          <Link to="RenderingPropsExample">
-            Rendering Props Example
-          </Link>
+          <Link to="RenderingPropsExample">Rendering Props Example</Link>
+        </li>
+        <li>
+          <Link to="HOCExample2">HOC Example 2</Link>
         </li>
       </ol>
     </>

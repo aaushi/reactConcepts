@@ -48,6 +48,10 @@ const RenderingPropsExample = lazy(() => {
   return import("./RenderingProps/PropsParent");
 });
 
+const HOCExample2 = lazy(() => {
+  return import("./HigherOrderComponents2/App");
+});
+
 
 const appRouter = createBrowserRouter([
   {
@@ -177,6 +181,14 @@ const appRouter = createBrowserRouter([
     element: (
       <Suspense fallback={<h2>...Loading</h2>}>
         <RenderingPropsExample />
+      </Suspense>
+    ),
+  },
+  {
+    path: "HOCExample2",
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <HOCExample2 />
       </Suspense>
     ),
   },
