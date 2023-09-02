@@ -64,6 +64,12 @@ function App() {
         <li>
           <Link to="HOCExample2">HOC Example 2</Link>
         </li>
+        <li>
+          <Link to="UseReducer">UseReducer Example 2</Link>
+        </li>
+        <li>
+          <Link to="Questions">Questions</Link>
+        </li>
       </ol>
     </>
   );

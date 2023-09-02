@@ -13,6 +13,7 @@ import PurposeAccessDom from "./ExampleUseRef/PurposeAccessDom";
 import ErrorBoundary from "./ErrorBoundary";
 import ExampleUseEffectMain from "./ExampleUseEffect/ExampleUseEffectMain";
 import { Auth0Provider } from "@auth0/auth0-react";
+import DropDowns from "./Questions/Youtube1/DropDowns";
 //import ParentA from "./LiftingStateUp/ParentA";
 //import ExampleUseContextParent from './ExampleUseContext/ExampleUseContextParent';
 const ExampleUseContext = lazy(() => {
@@ -50,6 +51,14 @@ const RenderingPropsExample = lazy(() => {
 
 const HOCExample2 = lazy(() => {
   return import("./HigherOrderComponents2/App");
+});
+
+const Questions = lazy(() => {
+  return import("./Questions/App");
+});
+
+const UseReducer = lazy(() => {
+  return import("./ExampleUseReducer/Balance2");
 });
 
 
@@ -191,6 +200,28 @@ const appRouter = createBrowserRouter([
         <HOCExample2 />
       </Suspense>
     ),
+  },
+  {
+    path: "UseReducer",
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <UseReducer />
+      </Suspense>
+    ),
+  },
+  {
+    path: "Questions",
+    element: <Questions />,
+    children: [
+      {
+        path: "dropdowns",
+        element: (
+          <Suspense fallback={<h2>...Loading</h2>}>
+            <DropDowns />
+          </Suspense>
+        ),
+      },
+    ],
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
