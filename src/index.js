@@ -211,7 +211,11 @@ const appRouter = createBrowserRouter([
   },
   {
     path: "Questions",
-    element: <Questions />,
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <Questions />
+      </Suspense>
+    ),
     children: [
       {
         path: "dropdowns",

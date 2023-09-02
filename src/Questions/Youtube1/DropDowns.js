@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const DropDowns = () => {
+  const [selectedState,setSelectedState]=useState();
+ 
   const list = [
     {
       state: "Uttar Pradesh",
@@ -23,14 +25,30 @@ const DropDowns = () => {
       cities: ["Patna"],
     },
   ];
-    
+
+  const handleSelectedState=(e)=>{
+      setSelectedState(e.target.value);
+  }
   return (
     <>
-    <h3>Question 1</h3>
+      <h3>Question 1</h3>
       <div>
-        {list.map((res) => {
-          <select>{res.state}</select>;
-        })}
+        <select onChange={(e) => handleSelectedState(e)}>
+          {list.map((res, index) => {
+            return (
+              <>
+                <option key={index} value={res.state}>
+                  {res.state}
+                </option>
+              </>
+            );
+          })}
+        </select>
+        <select>
+          {list.find((c)=>c.state===selectedState).cities.map((city, index) => {
+            return <option value={city}>{city}</option>;
+          })}
+        </select>
       </div>
     </>
   );
