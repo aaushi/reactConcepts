@@ -15,30 +15,34 @@ const LoginForm = () => {
     console.log(formErrors)
     setIsSubmit(true)
   }
-  useEffect(()=>{
+  /* useEffect(()=>{
     console.log(formErrors)
     if(Object.keys(formErrors).length===0 && isSubmit){
         console.log(formValue);
     }
 
-  },[formErrors])
+  },[formErrors]) */
   const validateForm = (formValue) => {
     let errors={};
     console.log(formValue);
-    const regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
+    const regexEmail = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
+    const regexUsername = new RegExp("^[a-zA-Z]*$");
     if(!formValue.username ){
         errors.username="Username is required";
+    }
+    if (!regexUsername.test(formValue.username)) {
+      errors.username = "Username is not Valid";
     }
     if(!formValue.password ){
         errors.password="password is required";
     }
-    else if (formValue.password<4) {
+    else if (formValue.password.length<4) {
       errors.password = "password is not valid";
     }
     if(!formValue.email){
         errors.email="Email is required";
     }
-    else if (!regex.test(formValue.email)) {
+    else if (!regexEmail.test(formValue.email)) {
       errors.email = "Email is not Valid";
     }
   
