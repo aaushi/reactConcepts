@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const LoginForm = () => {
   const [formValue, setFormValues] = useState({
@@ -6,22 +6,36 @@ const LoginForm = () => {
     password: "",
     email: "",
   });
-  const [erroMessage,setErrorMessage]=useState("");
-  const handleSubmit=()=>{
-    if(!formValue.username ){
+  const [formErrors,setFormErrors]=useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    console.log(e)
+    setFormErrors(validateForm(formValue));
+    setIsSubmit(true)
+  }
+  useEffect(()=>{
 
+  },[formErrors])
+  const validateForm = (formValue) => {
+    let errors={};
+    console.log(formValue);
+    const regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
+    if(!formValue.username ){
+        errors.username="Username is required";
     }
     else if(!formValue.password ){
-
+        errors.password="password is required";
     }
     else if(!formValue.email){
-        
+        errors.email="Email is required";
     }
-
-  }
+    console.log(errors);
+    return errors;
+  };
   return (
     <div>
-      <form onSubmit={()=>handleSubmit()}>
+      <form onSubmit={(e)=>handleSubmit(e)}>
         <label>userName:</label>
         <input
           values={formValue.username}
