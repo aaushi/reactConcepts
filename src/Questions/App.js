@@ -14,6 +14,9 @@ const App = () => {
       <li>
         <Link to="Sprouts">SproutsQ Example</Link>
       </li>
+      <li>
+        <Link to="LoginForm">Login Form Example</Link>
+      </li>
       <Outlet />
     </>
   );

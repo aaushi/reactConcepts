@@ -68,6 +68,9 @@ const SploreQ = lazy(() => {
 const Sprouts = lazy(() => {
   return import("./Questions/sprouts/Sprouts");
 });
+const LoginForm = lazy(() => {
+  return import("./Questions/loginForm/LoginForm");
+});
 
 
 const appRouter = createBrowserRouter([
@@ -246,6 +249,14 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<h2>...Loading</h2>}>
             <Sprouts />
+          </Suspense>
+        ),
+      },
+      {
+        path: "LoginForm",
+        element: (
+          <Suspense fallback={<h2>...Loading</h2>}>
+            <LoginForm />
           </Suspense>
         ),
       },
