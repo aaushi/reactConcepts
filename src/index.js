@@ -61,12 +61,12 @@ const UseReducer = lazy(() => {
   return import("./ExampleUseReducer/Balance2");
 });
 
-const SploreQ = lazy(() => {
-  return import("./Questions/splore/PaymentValidation");
+const PaymentValidation = lazy(() => {
+  return import("./Questions/PaymentValidation/PaymentValidation");
 });
 
-const Sprouts = lazy(() => {
-  return import("./Questions/sprouts/Sprouts");
+const UseEffectWithTimer = lazy(() => {
+  return import("./Questions/UseEffectTimer/UseEffectWithTimer");
 });
 const LoginForm = lazy(() => {
   return import("./Questions/loginForm/LoginForm");
@@ -237,18 +237,18 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: "splore",
+        path: "PaymentValidation",
         element: (
           <Suspense fallback={<h2>...Loading</h2>}>
-            <SploreQ />
+            <PaymentValidation />
           </Suspense>
         ),
       },
       {
-        path: "Sprouts",
+        path: "UseEffectWithTimer",
         element: (
           <Suspense fallback={<h2>...Loading</h2>}>
-            <Sprouts />
+            <UseEffectWithTimer />
           </Suspense>
         ),
       },

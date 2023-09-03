@@ -32,8 +32,14 @@ const LoginForm = () => {
     if(!formValue.password ){
         errors.password="password is required";
     }
+    else if (formValue.password<4) {
+      errors.password = "password is not valid";
+    }
     if(!formValue.email){
         errors.email="Email is required";
+    }
+    else if (!regex.test(formValue.email)) {
+      errors.email = "Email is not Valid";
     }
   
     //console.log(errors);

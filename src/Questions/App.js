@@ -9,10 +9,10 @@ const App = () => {
         <Link to="dropdowns">Dropdown Example</Link>
       </li>
       <li>
-        <Link to="splore">sploreQ Example</Link>
+        <Link to="PaymentValidation">PaymentValidation Example</Link>
       </li>
       <li>
-        <Link to="Sprouts">SproutsQ Example</Link>
+        <Link to="UseEffectWithTimer">UseEffectWithTimer Example</Link>
       </li>
       <li>
         <Link to="LoginForm">Login Form Example</Link>
