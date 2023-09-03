@@ -8,6 +8,12 @@ const App = () => {
       <li>
         <Link to="dropdowns">Dropdown Example</Link>
       </li>
+      <li>
+        <Link to="splore">sploreQ Example</Link>
+      </li>
+      <li>
+        <Link to="Sprouts">SproutsQ Example</Link>
+      </li>
       <Outlet />
     </>
   );

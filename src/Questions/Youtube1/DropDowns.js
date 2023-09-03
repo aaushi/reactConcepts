@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const DropDowns = () => {
+  let citiesToDisplay=[];
   const [selectedState,setSelectedState]=useState();
  
   const list = [
@@ -45,9 +46,16 @@ const DropDowns = () => {
           })}
         </select>
         <select>
-          {list.find((c)=>c.state===selectedState).cities.map((city, index) => {
-            return <option value={city}>{city}</option>;
-          })}
+        
+          {list
+            .find((c) => c?.state === selectedState)
+            ?.cities.map((city, index) => {
+              return (
+                <option key={index}  value={city}>
+                  {city}
+                </option>
+              );
+            })}
         </select>
       </div>
     </>

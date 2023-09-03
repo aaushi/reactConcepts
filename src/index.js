@@ -61,6 +61,14 @@ const UseReducer = lazy(() => {
   return import("./ExampleUseReducer/Balance2");
 });
 
+const SploreQ = lazy(() => {
+  return import("./Questions/splore/PaymentValidation");
+});
+
+const Sprouts = lazy(() => {
+  return import("./Questions/sprouts/Sprouts");
+});
+
 
 const appRouter = createBrowserRouter([
   {
@@ -222,6 +230,22 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<h2>...Loading</h2>}>
             <DropDowns />
+          </Suspense>
+        ),
+      },
+      {
+        path: "splore",
+        element: (
+          <Suspense fallback={<h2>...Loading</h2>}>
+            <SploreQ />
+          </Suspense>
+        ),
+      },
+      {
+        path: "Sprouts",
+        element: (
+          <Suspense fallback={<h2>...Loading</h2>}>
+            <Sprouts />
           </Suspense>
         ),
       },
