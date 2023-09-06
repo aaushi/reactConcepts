@@ -17,6 +17,10 @@ const App = () => {
       <li>
         <Link to="LoginForm">Login Form Example</Link>
       </li>
+      <li>
+        <Link to="PlayPauseReset">Play Pause Reset Example</Link>
+      </li>
+
       <Outlet />
     </>
   );

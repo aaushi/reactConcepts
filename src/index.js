@@ -72,6 +72,10 @@ const LoginForm = lazy(() => {
   return import("./Questions/loginForm/LoginForm");
 });
 
+const PlayPauseReset = lazy(() => {
+  return import("./Questions/PlayPauseReset/PlayPauseReset");
+});
+
 
 const appRouter = createBrowserRouter([
   {
@@ -257,6 +261,14 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<h2>...Loading</h2>}>
             <LoginForm />
+          </Suspense>
+        ),
+      },
+      {
+        path: "PlayPauseReset",
+        element: (
+          <Suspense fallback={<h2>...Loading</h2>}>
+            <PlayPauseReset />
           </Suspense>
         ),
       },
