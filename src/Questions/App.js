@@ -20,6 +20,9 @@ const App = () => {
       <li>
         <Link to="PlayPauseReset">Play Pause Reset Example</Link>
       </li>
+      <li>
+        <Link to="LoginFormVariation2">Login Form Variation 2 Example</Link>
+      </li>
 
       <Outlet />
     </>

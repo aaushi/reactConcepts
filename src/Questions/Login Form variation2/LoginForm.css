@@ -1,0 +1,55 @@
+.formApp {
+  display: flex;
+  background: 
+  url("bckg.png") ;
+background-size: cover;
+background-position: center;
+}
+form{
+  background-color: white;
+  width: 500px;
+  height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 100px 50px 550px ;
+  border-radius: 3%;
+}
+input{
+  
+  width: 400px;
+  padding: 13px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+label{
+    font-weight: bold;
+    font-size: large;
+    margin:5px;
+}
+button{
+    height: 50px;
+    width: 150px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color:white;
+    background-color: blueviolet;
+    font-weight: bold;
+    font-size: larger;
+}
+.formInput{
+    display: flex;
+    flex-direction: column;
+    padding:10px
+}
+span{
+    font-size: small;
+    color: red;
+    width: 400px;
+    display:none
+}
+input:invalid[touched=true]~span{
+    display: block;
+}
+

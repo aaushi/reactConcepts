@@ -1,0 +1,133 @@
+import React, { useState } from "react";
+
+const LoginFormVariation2 = () => {
+
+    const [input,setInput]=useState({username:"",email:"",password:""});
+    const [formErrors,setFormErrors]=useState({usernameError:"",emailError:"",passwordError:""});
+
+    const handleInput=(e)=>{
+        e.preventDefault();
+        console.log(e);
+        //setInput((input) => ({ ...input, [e.target.name]: e.target.value }));
+        setInput({ ...input, [e.target.name]: e.target.value });
+        if(e.target.name==='username'){
+            validateUserName(e.target.value);
+        }
+        if (e.target.name === "email") {
+          validateEmail();
+        }
+        if (e.target.name === "email") {
+          validatePassword();
+        }
+    }
+    const validateUserName = (value) => {
+        if(!value){
+            setFormErrors({...formErrors,usernameError:"User Name is required"})
+        }
+    };
+    const validateEmail = (value) => {};
+    const validatePassword = (value) => {};
+  return (
+    <form
+      style={{
+        backgroundColor: "#f0f0f0",
+        width: "400px",
+        height: "500px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        margin: "auto",
+        borderRadius: "5%",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          width: "300px",
+          height: "100px",
+          flexDirection: "column",
+          justifyContent: "flex-end",
+        }}
+      >
+        <label>User Name</label>
+        <input
+          name="username"
+          value={input.username}
+          style={{
+            width: "250px",
+            height: "30px",
+            marginTop: "20px",
+          }}
+          onChange={(e) => handleInput(e, input.username)}
+          required
+        ></input>
+        <p style={{ color: "red" }}>{formErrors.usernameError}</p>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          width: "300px",
+          height: "100px",
+          flexDirection: "column",
+          justifyContent: "flex-end",
+        }}
+      >
+        <label>Email</label>
+        <input
+          value={input.email}
+          name="email"
+          style={{
+            width: "250px",
+            height: "30px",
+            marginTop: "20px",
+          }}
+          onChange={(e) => handleInput(e)}
+          required
+        ></input>
+        <p style={{ color: "red" }}>{formErrors.emailError}</p>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          width: "300px",
+          height: "100px",
+          flexDirection: "column",
+          justifyContent: "flex-end",
+        }}
+      >
+        <label>Password</label>
+        <input
+          value={input.password}
+          name="password"
+          type="password"
+          style={{
+            width: "250px",
+            height: "30px",
+            marginTop: "20px",
+          }}
+          onChange={(e) => handleInput(e)}
+          required
+        ></input>
+        <p style={{ color: "red" }}>{formErrors.passwordError}</p>
+      </div>
+      <div style={{ display: "flex" }}>
+        <button
+          style={{
+            backgroundColor: "blueviolet",
+            color: "white",
+            width: "80px",
+            height: "30px",
+            borderRadius: "5%",
+            margin: "40px",
+          }}
+        >
+          {" "}
+          Submit{" "}
+        </button>
+      </div>
+    </form>
+  );
+};
+
+//export default LoginFormVariation2;
