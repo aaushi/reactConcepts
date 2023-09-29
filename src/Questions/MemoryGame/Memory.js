@@ -37,7 +37,7 @@ export default function Memory() {
   const didPlayerWin=matchedTiles.length===boardColors.length;
   return (
     <>
-      <h1> {didPlayerWin?'You Win':'Memory'}</h1>
+      <h1>{didPlayerWin ? "You Win!" : "Memory"}</h1>
       <div className="board">
         {boardColors.map((tileColor, i) => {
           let isTileClicked =
@@ -45,11 +45,15 @@ export default function Memory() {
           let classUsed = isTileClicked ? `tile ${tileColor}` : `tile`;
           console.log(classUsed);
           return (
-            <div className={classUsed} onClick={() => selectTile(i)}></div>
+            <div
+              key={i}
+              className={classUsed}
+              onClick={() => selectTile(i)}
+            ></div>
           );
         })}
       </div>
-      <button onClick={()=>restartGame()}>Restart</button>
+      {didPlayerWin && <button onClick={() => restartGame()}>Restart</button>}
     </>
   );
 }
