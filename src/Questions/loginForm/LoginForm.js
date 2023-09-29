@@ -15,15 +15,22 @@ const LoginForm = () => {
     console.log(formErrors);
     setIsSubmit(true);
   };
+
+
+
   useEffect(() => {
     console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       console.log(formValue);
     }
   }, [formErrors]);
+
+
+
   const validateForm = (formValue) => {
     let errors = {};
     console.log(formValue);
+
     const regexEmail = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
     const regexUsername = new RegExp("^[a-zA-Z]*$");
     if (!formValue.username) {
@@ -72,7 +79,7 @@ const LoginForm = () => {
           }
         ></input>
         <p style={{ color: "red" }}>{formErrors.email}</p>
-        <button>Submit</button>
+        <button > Submit</button>
       </form>
     </div>
   );

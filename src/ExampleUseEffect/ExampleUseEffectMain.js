@@ -2,10 +2,19 @@ import React, { useEffect, useState } from "react";
 
 const ExampleUseEffectMain = () => {
   const [count, setCount] = useState(0);
+  const [counter, setCounter] = useState(0);
   console.log("outside useeffect");
   useEffect(() => {
     console.log("in useeffect");
-  }, [count]); //[] only once after render//componentdidmount()
+    setCounter(counter=>counter + 1);
+    //console.log("counter=" + counter);
+    setCounter((counter) => counter + 1);
+    console.log("counter="+counter);
+
+  },[]);
+  useEffect(()=>{
+    console.log("counter="+counter)
+  },[counter]) //[] only once after render//componentdidmount()
   //[count] runs after every render.//componentdidupdate()
   //
   const handleClick = () => {

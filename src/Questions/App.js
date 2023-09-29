@@ -23,6 +23,15 @@ const App = () => {
       <li>
         <Link to="LoginFormVariation2">Login Form Variation 2 Example</Link>
       </li>
+      <li>
+        <Link to="Quiz">Quiz AE Example</Link>
+      </li>
+      <li>
+        <Link to="PaymentValidation2">Payment Validation Variation 2</Link>
+      </li>
+      <li>
+        <Link to="MemoryGame">Memory Game</Link>
+      </li>
 
       <Outlet />
     </>

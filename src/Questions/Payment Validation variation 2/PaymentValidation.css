@@ -1,0 +1,18 @@
+
+input {
+
+    width: 400px;
+    padding: 13px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+span {
+    font-size: small;
+    color: red;
+    width: 400px;
+    display: none
+}
+
+input:invalid[touched=true]~span {
+    display: block;
+}

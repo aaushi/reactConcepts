@@ -64,6 +64,9 @@ const UseReducer = lazy(() => {
 const PaymentValidation = lazy(() => {
   return import("./Questions/PaymentValidation/PaymentValidation");
 });
+const PaymentValidationVariation2 = lazy(() => {
+  return import("./Questions/Payment Validation variation 2/PaymentValidation2");
+});
 
 const UseEffectWithTimer = lazy(() => {
   return import("./Questions/UseEffectTimer/UseEffectWithTimer");
@@ -78,6 +81,12 @@ const PlayPauseReset = lazy(() => {
 
 const LoginFormVariation2 = lazy(() => {
   return import("./Questions/Login Form variation2/LoginFormVariation2");
+});
+const Quiz = lazy(() => {
+  return import("./Questions/Quiz_AE/Quiz");
+});
+const MemoryGame = lazy(() => {
+  return import("./Questions/MemoryGame/Memory");
 });
 
 
@@ -253,6 +262,14 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
+        path: "PaymentValidation2",
+        element: (
+          <Suspense fallback={<h2>...Loading</h2>}>
+            <PaymentValidationVariation2 />
+          </Suspense>
+        ),
+      },
+      {
         path: "UseEffectWithTimer",
         element: (
           <Suspense fallback={<h2>...Loading</h2>}>
@@ -281,6 +298,22 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<h2>...Loading</h2>}>
             <LoginFormVariation2 />
+          </Suspense>
+        ),
+      },
+      {
+        path: "Quiz",
+        element: (
+          <Suspense fallback={<h2>...Loading</h2>}>
+            <Quiz />
+          </Suspense>
+        ),
+      },
+      {
+        path: "MemoryGame",
+        element: (
+          <Suspense fallback={<h2>...Loading</h2>}>
+            <MemoryGame />
           </Suspense>
         ),
       },
