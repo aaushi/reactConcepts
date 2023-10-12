@@ -68,6 +68,9 @@ function App() {
           <Link to="UseReducer">UseReducer Example 2</Link>
         </li>
         <li>
+          <Link to="ReactMemoExample">React.Memo Example </Link>
+        </li>
+        <li>
           <Link to="Questions">Questions</Link>
         </li>
       </ol>

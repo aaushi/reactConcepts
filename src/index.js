@@ -89,6 +89,10 @@ const MemoryGame = lazy(() => {
   return import("./Questions/MemoryGame/Memory");
 });
 
+const ReactMemoExample = lazy(() => {
+  return import("./ReactMemo/Parent");
+});
+
 
 const appRouter = createBrowserRouter([
   {
@@ -120,6 +124,14 @@ const appRouter = createBrowserRouter([
     element: (
       <Suspense fallback={<h2>...Loading</h2>}>
         <Directory />
+      </Suspense>
+    ),
+  },
+  {
+    path: "ReactMemoExample",
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <ReactMemoExample />
       </Suspense>
     ),
   },
