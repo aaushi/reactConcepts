@@ -73,6 +73,9 @@ function App() {
         <li>
           <Link to="Questions">Questions</Link>
         </li>
+        <li>
+          <Link to="CustomHooksGeneral">General Custom Hooks</Link>
+        </li>
       </ol>
     </>
   );

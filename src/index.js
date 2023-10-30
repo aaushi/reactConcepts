@@ -92,6 +92,9 @@ const MemoryGame = lazy(() => {
 const ReactMemoExample = lazy(() => {
   return import("./ReactMemo/Parent");
 });
+const CustomHooksGeneral = lazy(() => {
+  return import("./CustomHooksGeneral/Usage");
+});
 
 
 const appRouter = createBrowserRouter([
@@ -246,6 +249,14 @@ const appRouter = createBrowserRouter([
     element: (
       <Suspense fallback={<h2>...Loading</h2>}>
         <UseReducer />
+      </Suspense>
+    ),
+  },
+  {
+    path: "CustomHooksGeneral",
+    element: (
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <CustomHooksGeneral />
       </Suspense>
     ),
   },
